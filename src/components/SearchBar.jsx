@@ -5,10 +5,11 @@ class SearchBar extends Component {
     term: ""
   };
 
-  //to Prevent Form auto refreshing when press 'enter' key
-  onFormSubmit(event) {
+  //to Prevent <Form>  auto refreshing when press 'enter' key
+  onFormSubmit = event => {
     event.preventDefault();
-  }
+    this.props.onSubmit(this.state.term);
+  };
 
   render() {
     return (
